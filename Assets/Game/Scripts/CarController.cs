@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    [Header("CarPhysics")]
+    [Header("Car Physics")]
     public float motorForce;
     public float brakingForce;
     public float steerAngle;
@@ -46,8 +46,7 @@ public class CarController : MonoBehaviour
     {
         rearLeftWheelColl.motorTorque = zInput * motorForce;
         rearRightWheelColl.motorTorque = zInput * motorForce;
-
-        
+       
         float currBrakeForce = isHandBraking ? brakingForce : 0f;
         ApplyBrake(currBrakeForce);
     }
@@ -56,8 +55,8 @@ public class CarController : MonoBehaviour
     {
         rearLeftWheelColl.brakeTorque = brakeForce;
         rearRightWheelColl.brakeTorque = brakeForce;
-        frontLeftWheelColl.brakeTorque = brakeForce;
-        frontRightWheelColl.brakeTorque = brakeForce;
+        // frontLeftWheelColl.brakeTorque = brakeForce;
+        // frontRightWheelColl.brakeTorque = brakeForce;
     }
 
     void HandleSteering()
